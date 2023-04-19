@@ -1,0 +1,216 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(~testOnly storagetests, Some(43223b0a-3a18-4b5c-80ec-9180b064bf88), Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(__runWatch console0, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(sbtStashOnFailure, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(__preWatch console0, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(testOnly storagetests, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: Test / testOnly[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 8 Scala sources to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\target\scala-2.12\classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\argpass.scala:34:15: ';' expected but ':' found.[0m
+[0m[[0m[31merror[0m] [0m[0mobject argpass:[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\argpass.scala:38:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    def get(): Int = n[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\argpass.scala:39:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    def set(m: Int): Unit = { n = m }[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\argpass.scala:52:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def refint1(f: RefInt => Unit): (Int, Int, Int) =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\argpass.scala:74:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def refint2(f: RefInt => Unit): (Int, Int, Int) =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\argpass.scala:85:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def refint3(r: RefInt): RefInt =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\argpass.scala:100:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def refint4(r: RefInt, f: RefInt => Unit): Boolean =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\argpass.scala:110:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def refint5(xs: List[RefInt]): Unit =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\dynamic.scala:34:15: ';' expected but ':' found.[0m
+[0m[[0m[31merror[0m] [0m[0mobject dynamic:[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\dynamic.scala:47:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def useGreet(i18n: Internationalization, name: String): String =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\dynamic.scala:60:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def newEnglish(): Internationalization =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\dynamic.scala:73:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def newFrench(): Internationalization =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:34:11: ';' expected but ':' found.[0m
+[0m[[0m[31merror[0m] [0m[0mobject fp1:[0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:41:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    val result = computeResult[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:42:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    println(s"$prefix : $result")[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:43:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    result[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:49:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def fact(n: Int): Int =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:54:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def factLog(n: Int): Int =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:93:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  val factTest: List[Int] =List(fact(1),fact(2),fact(3),fact(4),fact(5))[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:102:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def fib(n: Int): Int = if n<=1 then n[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:108:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  val p1: (Int, String) =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:114:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  val t1: (Int, String, Boolean) =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:124:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def swap(p: (Int, String)): (String, Int) =(p(1),p(0))[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:131:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def sum(xs: List[Int]): Int = [0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:146:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def sumTailAux(xs: List[Int], accumulator: Int): Int =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:149:7: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m      case y :: ys => sumTailAux(ys, accumulator + y)[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:151:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def sumTail(xs: List[Int]): Int =sumTailAux(xs,0)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:164:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def maxList(xs: List[Int]): Int ={[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:179:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def maxTailAux(xs: List[Int], accumulator: Int): Int =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:185:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def maxTail(xs: List[Int]): Int =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:188:7: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m      case y :: ys => maxTailAux(ys, y)[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:201:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def otpu(start: Int, end: Int): List[Int] =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp2.scala:35:11: ';' expected but ':' found.[0m
+[0m[[0m[31merror[0m] [0m[0mobject fp2:[0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp2.scala:65:4: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m   def filter[A]( xs: List[A], f: A => Boolean): List[A] = xs match {[0m
+[0m[[0m[31merror[0m] [0m[0m   ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp2.scala:82:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mdef append[A](xs: List[A], ys: List[A]): List[A] ={ xs match {[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp2.scala:100:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def flatten[A](xss: List[List[A]]): List[A] ={[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp2.scala:117:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def foldLeft[A, B](xs: List[A], e: B, f: (B, A) => B): B ={[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp2.scala:134:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def foldRight[A, B](xs: List[A], e: B, f: (A, B) => B): B ={[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp2.scala:156:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def joinTerminateRight(xs: List[String], term: String): String =  {  [0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp2.scala:173:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def joinTerminateLeft(xs: List[String], term: String): String ={[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp2.scala:190:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def firstNumGreaterOrEqual(a: Int, xs: List[Int]): Int ={[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp2.scala:218:2: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m	def firstIndexNumGreaterOrEqual(a: Int, xs: List[Int]): Int ={[0m
+[0m[[0m[31merror[0m] [0m[0m	^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp3.scala:34:11: ';' expected but ':' found.[0m
+[0m[[0m[31merror[0m] [0m[0mobject fp3:[0m
+[0m[[0m[31merror[0m] [0m[0m          ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp3.scala:67:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def allEqual(xs: List[Int]): Boolean ={[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp3.scala:89:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def stringLengths(xs: List[String]): List[(String, Int)] =xs.map(x=>(x,x.length))[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp3.scala:102:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def delete1[X](x: X, ys: List[X]): List[X] ={[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp3.scala:120:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def delete2[X](x: X, ys: List[X]): List[X] = for y<-ys if y!= x[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp3.scala:130:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def delete3[X](x: X, ys: List[X]): List[X] =ys.filter(y=>(y!=x))[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp3.scala:144:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def removeDupes1[X](xs: List[X]): List[X] ={[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp3.scala:172:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def countHelper[X](elements:X, xs:List[X], count:Int):List[(Int,X)]={[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp3.scala:188:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def removeDupes2[X](xs: List[X]): List[(Int, X)] ={//throw UnsupportedOperationException()	[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp3.scala:230:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def splitAt[X](n: Int, xs: List[X]): (List[X], List[X]) ={[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp3.scala:248:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def allDistinct(xs: List[Int]): Boolean ={[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\interpreter.scala:28:19: ';' expected but ':' found.[0m
+[0m[[0m[31merror[0m] [0m[0mobject interpreter:[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\storage.scala:35:15: ';' expected but ':' found.[0m
+[0m[[0m[31merror[0m] [0m[0mobject storage:[0m
+[0m[[0m[31merror[0m] [0m[0m              ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\storage.scala:46:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  val constant: Int => () => Int =(n: Int)=>()=>n[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\storage.scala:58:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  val counter0: () => Int =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\storage.scala:72:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  val counter: Int => () => Int =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\storage.scala:90:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  val getAndSet: Int => (() => Int, Int => Unit) =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\storage.scala:119:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  val getAndSetSpy: () => (() => Int, Int => (() => Int, Int => Unit)) =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\subtyping.scala:33:17: ';' expected but ':' found.[0m
+[0m[[0m[31merror[0m] [0m[0mobject subtyping:[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\subtyping.scala:39:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    def increment() = { n = n + 1 }[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\subtyping.scala:40:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    def decrement() = { n = n - 1 }[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\subtyping.scala:41:5: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m    def get(): Int = n[0m
+[0m[[0m[31merror[0m] [0m[0m    ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\subtyping.scala:58:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def observeCounter(f: Counter => Unit): Int =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\subtyping.scala:74:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def observeCounterList(f: List[Counter] => Unit): List[Int] =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\subtyping.scala:91:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  def observeCounterArray(f: Array[Counter] => Unit): Array[Int] =[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0m67 errors found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 3 s, completed 2023年2月12日 上午9:16:38[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(resumeFromFailure, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(sbtPopOnFailure, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(__postWatch console0, None, Some(CommandSource(console0)))[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(__waitWatch console0, None, Some(CommandSource(console0)))[0m

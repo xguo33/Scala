@@ -1,0 +1,2858 @@
+Microsoft Windows [Version 10.0.22621.1105]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw>sbt
+[info] Updated file C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\project\build.properties: set sbt.version to 1.8.2
+[info] welcome to sbt 1.8.2 (Oracle Corporation Java 18)
+[info] loading project definition from C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\project
+[info] loading settings for project hw from build.sbt ...
+[info] set current project to CSC447 (in build file:/C:/Users/preei/Documents/MSCS/CSC447/hw%20(1)/hw/)
+[info] sbt server started at local:sbt-server-375a9f271d71a01ca767
+[info] started sbt server
+sbt:CSC447> help
+
+  <command> (; <command>)*                       Runs the provided semicolon-separated commands.
+  about                                          Displays basic information about sbt and the build.
+  tasks                                          Lists the tasks defined for the current project.
+  settings                                       Lists the settings defined for the current project.
+  reload                                         (Re)loads the current project or changes to plugins project or returns from it.
+  new                                            Creates a new sbt build.
+  projects                                       Lists the names of available projects or temporarily adds/removes extra builds to the session.
+  project                                        Displays the current project or changes to the provided `project`.
+  set [every] <setting>                          Evaluates a Setting and applies it to the current project.
+  session                                        Manipulates session settings.  For details, run 'help session'.
+  inspect [tree|uses|definitions|actual] <key>   Prints the value for 'key', the defining scope, delegates, related definitions, and dependencies.
+  <log-level>                                    Sets the logging level to 'log-level'.  Valid levels: debug, info, warn, error
+  plugins                                        Lists currently available plugins.
+  --addPluginSbtFile=<file>                      Adds the given *.sbt file to the plugin build.
+  last                                           Displays output from a previous command or the output from a specific task.
+  last-grep                                      Shows lines from the last output for 'key' that match 'pattern'.
+  lastGrep                                       Shows lines from the last output for 'key' that match 'pattern'.
+  export <tasks>+                                Executes tasks and displays the equivalent command lines.
+  show <key>                                     Displays the result of evaluating the setting or task associated with 'key'.
+  print <key>                                    Prints the result of evaluating the setting or task associated with 'key' to standard output.
+  all <task>+                                    Executes all of the specified tasks concurrently.
+  ~ <command>                                    Executes the specified command whenever source files change.
+  help                                           Displays this help message or prints detailed help on requested commands (run 'help <command>').
+  completions                                    Displays a list of completions for the given argument string (run 'completions <string>').
+  early(<command>)                               Schedules a command to run before other commands on startup.
+  exit                                           Terminates the remote client or the build when called from the console.  shutdown                                       Terminates the build.
+
+More command help available using 'help <command>' for:
+  !, +, ++, +-, <, ^, ^^, alias, append, apply, clearCaches, client, eval, iflast, java+, java++, onFailure, reboot, shell, startServer
+
+sbt:CSC447> console
+[info] compiling 8 Scala sources to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+Welcome to Scala 3.2.0 (18, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> 1+2
+val res0: Int = 3
+
+scala> : quit
+-- [E103] Syntax Error: --------------------------------------------------------
+1 |: quit
+  |^
+  |Illegal start of statement
+  |
+  | longer explanation available when compiling with `-explain`
+
+scala>
+
+[success] Total time: 40 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê2:17:43
+sbt:CSC447> console
+Welcome to Scala 3.2.0 (18, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> import fp1._
+     |
+-- [E040] Syntax Error: --------------------------------------------------------
+1 |import _
+  |       ^
+  |       an identifier expected, but '_' found
+  |
+  | longer explanation available when compiling with `-explain`
+
+scala> import fp1.-
+-- [E008] Not Found Error: -----------------------------------------------------
+1 |import fp1.-
+  |           ^
+  |           value - is not a member of object fp1
+1 error found
+
+scala> import fp1._
+-- Error: ----------------------------------------------------------------------
+1 |import fp1._
+  |           ^
+  |         `_` is no longer supported for a wildcard import; use `*` instead
+
+scala> import fp1.*
+
+scala> import fp1.*
+
+scala> fact(4)
+val res0: Int = 24
+
+scala> fact(5)
+val res1: Int = 120
+
+scala> val x= "hi"
+val x: String = hi
+
+scala>   val factTest : List[Int] = {
+     | val l = List(1,2,3,4,5)
+     |     l.map(fact)
+     |   }
+val factTest: List[Int] = List(1, 2, 6, 24, 120)
+
+scala> fact(5)
+val res2: Int = 120
+
+scala> val factTest :list [Int]= List (1,2,6,24,120)
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |val factTest :list [Int]= List (1,2,6,24,120)
+  |              ^^^^
+  |              Not found: type list
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> val factTest :List [Int]= List (1,2,6,24,120)
+val factTest: List[Int] = List(1, 2, 6, 24, 120)
+
+scala> val squares=List.tabulate(6)(n =>n*n)
+val squares: List[Int] = List(0, 1, 4, 9, 16, 25)
+
+scala> val squares=List.tabulate(6)(n =>n*n, n>0)
+-- [E081] Type Error: ----------------------------------------------------------
+1 |val squares=List.tabulate(6)(n =>n*n, n>0)
+  |                             ^
+  |                            Missing parameter type
+  |
+  |                            I could not infer the type of the parameter n.
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |val squares=List.tabulate(6)(n =>n*n, n>0)
+  |                                      ^
+  |                                      Not found: n
+  |
+  | longer explanation available when compiling with `-explain`
+2 errors found
+
+scala> val squares=List.tabulate(6)(n =>n*n)
+val squares: List[Int] = List(0, 1, 4, 9, 16, 25)
+
+scala> val squares=List.tabulate(6)(n =>n*(n-1))
+val squares: List[Int] = List(0, 0, 2, 6, 12, 20)
+
+scala> val squares=List.tabulate(6)(n =>n*(n-1),n>0)
+-- [E081] Type Error: ----------------------------------------------------------
+1 |val squares=List.tabulate(6)(n =>n*(n-1),n>0)
+  |                             ^
+  |                            Missing parameter type
+  |
+  |                            I could not infer the type of the parameter n.
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |val squares=List.tabulate(6)(n =>n*(n-1),n>0)
+  |                                         ^
+  |                                         Not found: n
+  |
+  | longer explanation available when compiling with `-explain`
+2 errors found
+
+scala> val squares=List.tabulate(6)(n =>n*(n-1))
+val squares: List[Int] = List(0, 0, 2, 6, 12, 20)
+
+scala> val squares=List.tabulate(6)(n =1)
+-- Error: ----------------------------------------------------------------------
+1 |val squares=List.tabulate(6)(n =1)
+  |                             ^^^^
+  |method tabulate in trait StrictOptimizedSeqFactory: (f: Int => A): List[A] does not have a parameter n
+1 error found
+
+scala> val squares=List.tabulate(6)(n=>n>1,n=>n*n)
+-- [E081] Type Error: ----------------------------------------------------------
+1 |val squares=List.tabulate(6)(n=>n>1,n=>n*n)
+  |                             ^
+  |                            Missing parameter type
+  |
+  |                            I could not infer the type of the parameter n.
+-- [E081] Type Error: ----------------------------------------------------------
+1 |val squares=List.tabulate(6)(n=>n>1,n=>n*n)
+  |                                    ^
+  |                            Missing parameter type
+  |
+  |                            I could not infer the type of the parameter n.
+2 errors found
+
+scala> val factTest :list [Int]= List (fact(0),fact(1),fact(2),fact(3),fact(4),fact(5))
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |val factTest :list [Int]= List (fact(0),fact(1),fact(2),fact(3),fact(4),fact(5))
+  |              ^^^^
+  |              Not found: type list
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> val factTest :List [Int]= List (fact(0),fact(1),fact(2),fact(3),fact(4),fact(5))
+val factTest: List[Int] = List(1, 1, 2, 6, 24, 120)
+
+scala> val factTest :List [Int]= List (fact(1),fact(2),fact(3),fact(4),fact(5))
+val factTest: List[Int] = List(1, 2, 6, 24, 120)
+
+scala>
+
+[success] Total time: 1808 s (30:08), completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê2:48:29
+sbt:CSC447> testOnly fp1test
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E018] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:93:27
+[error] 93 |  val factTest: List[Int] =
+[error]    |                           ^
+[error]    |                           expression expected but def found
+[error]    |
+[error]    | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê2:49:09
+sbt:CSC447> testOnly fp1test
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E018] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:93:27
+[error] 93 |  val factTest: List[Int] =
+[error]    |                           ^
+[error]    |                           expression expected but def found
+[error]    |
+[error]    | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê2:49:58
+sbt:CSC447> test
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E018] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:93:27
+[error] 93 |  val factTest: List[Int] =
+[error]    |                           ^
+[error]    |                           expression expected but def found
+[error]    |
+[error]    | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê2:50:09
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E018] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:93:27
+[error] 93 |  val factTest: List[Int] =
+[error]    |                           ^
+[error]    |                           expression expected but def found
+[error]    |
+[error]    | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê2:51:06
+sbt:CSC447> scala
+[error] Not a valid command: scala (similar: alias, last, eval)
+[error] Not a valid project ID: scala
+[error] Expected ':'
+[error] Not a valid key: scala (similar: scalaHome, scalaSource, clean)
+[error] scala
+[error]      ^
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E018] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:93:27
+[error] 93 |  val factTest: List[Int] =
+[error]    |                           ^
+[error]    |                           expression expected but def found
+[error]    |
+[error]    | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê2:51:30
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E018] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:93:27
+[error] 93 |  val factTest: List[Int] =
+[error]    |                           ^
+[error]    |                           expression expected but def found
+[error]    |
+[error]    | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê2:51:35
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+Welcome to Scala 3.2.0 (18, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> :quit
+
+[success] Total time: 7 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê2:52:14
+sbt:CSC447> testOnly fp1test
+[info] compiling 9 Scala sources to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\test-classes ...
+[info] Passed: Total 0, Failed 0, Errors 0, Passed 0
+[info] No tests to run for Test / testOnly
+[success] Total time: 4 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê2:52:25
+sbt:CSC447> testOnly fp1tests -- -n fp1ex01
+[info] fp1tests:
+[info] - EX01 - factTest
+[info] Run completed in 419 milliseconds.
+[info] Total number of tests run: 1
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0
+[info] All tests passed.
+[success] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê2:53:24
+sbt:CSC447> testOnly fp1test
+[info] Passed: Total 0, Failed 0, Errors 0, Passed 0
+[info] No tests to run for Test / testOnly
+[success] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê2:53:56
+sbt:CSC447> mode con cp select=437
+[error] Expected ID character
+[error] Not a valid command: mode (similar: oldshell, loadp)
+[error] Expected project ID
+[error] Expected configuration
+[error] Expected ':'
+[error] Expected key
+[error] Not a valid key: mode (similar: name, moduleName, ivyModule)
+[error] mode con cp select=437
+[error]     ^
+sbt:CSC447> quit
+[error] Not a valid command: quit (similar: exit, about)
+[error] Not a valid project ID: quit
+[error] Expected ':'
+[error] Not a valid key: quit
+[error] quit
+[error]     ^
+sbt:CSC447> help
+
+  <command> (; <command>)*                       Runs the provided semicolon-separated commands.
+  about                                          Displays basic information about sbt and the build.
+  tasks                                          Lists the tasks defined for the current project.
+  settings                                       Lists the settings defined for the current project.
+  reload                                         (Re)loads the current project or changes to plugins project or returns from it.
+  new                                            Creates a new sbt build.
+  projects                                       Lists the names of available projects or temporarily adds/removes extra builds to the session.
+  project                                        Displays the current project or changes to the provided `project`.
+  set [every] <setting>                          Evaluates a Setting and applies it to the current project.
+  session                                        Manipulates session settings.  For details, run 'help session'.
+  inspect [tree|uses|definitions|actual] <key>   Prints the value for 'key', the defining scope, delegates, related definitions, and dependencies.
+  <log-level>                                    Sets the logging level to 'log-level'.  Valid levels: debug, info, warn, error
+  plugins                                        Lists currently available plugins.
+  --addPluginSbtFile=<file>                      Adds the given *.sbt file to the plugin build.
+  last                                           Displays output from a previous command or the output from a specific task.
+  last-grep                                      Shows lines from the last output for 'key' that match 'pattern'.
+  lastGrep                                       Shows lines from the last output for 'key' that match 'pattern'.
+  export <tasks>+                                Executes tasks and displays the equivalent command lines.
+  show <key>                                     Displays the result of evaluating the setting or task associated with 'key'.
+  print <key>                                    Prints the result of evaluating the setting or task associated with 'key' to standard output.
+  all <task>+                                    Executes all of the specified tasks concurrently.
+  ~ <command>                                    Executes the specified command whenever source files change.
+  help                                           Displays this help message or prints detailed help on requested commands (run 'help <command>').
+  completions                                    Displays a list of completions for the given argument string (run 'completions <string>').
+  early(<command>)                               Schedules a command to run before other commands on startup.
+  exit                                           Terminates the remote client or the build when called from the console.  shutdown                                       Terminates the build.
+
+More command help available using 'help <command>' for:
+  !, +, ++, +-, <, ^, ^^, alias, append, apply, clearCaches, client, eval, iflast, java+, java++, onFailure, reboot, shell, startServer
+
+sbt:CSC447> exit
+[info] shutting down sbt server
+
+C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw>mode con cp select=437
+
+Status for device CON:
+----------------------
+    Lines:          9001
+    Columns:        120
+    Keyboard rate:  31
+    Keyboard delay: 1
+    Code page:      437
+
+
+C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw>sbt
+[info] welcome to sbt 1.8.2 (Oracle Corporation Java 18)
+[info] loading project definition from C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\project
+[info] loading settings for project hw from build.sbt ...
+[info] set current project to CSC447 (in build file:/C:/Users/preei/Documents/MSCS/CSC447/hw%20(1)/hw/)
+[info] sbt server started at local:sbt-server-375a9f271d71a01ca767
+[info] started sbt server
+sbt:CSC447> testOnly fp1tests -- -n fp1ex01
+[info] fp1tests:
+[info] - EX01 - factTest
+[info] Run completed in 445 milliseconds.
+[info] Total number of tests run: 1
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0
+[info] All tests passed.
+[success] Total time: 2 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê2:57:11
+sbt:CSC447> testOnly fp1tests -- -n fp1ex02
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if n=0 || n=1
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- [E040] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:12
+[error] 104 |   if n=0 || n=1
+[error]     |              ^
+[error]     |              'then' expected, but '=' found
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- [E008] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:8
+[error] 104 |   if n=0 || n=1
+[error]     |        ^^^^
+[error]     |        value || is not a member of Int
+[error] four errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 3 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:13:40
+sbt:CSC447> testOnly fp1tests -- -n fp1ex02
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if n=0 || n=1 || n>1
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- [E040] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:12
+[error] 104 |   if n=0 || n=1 || n>1
+[error]     |              ^
+[error]     |              'then' expected, but '=' found
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- [E008] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:8
+[error] 104 |   if n=0 || n=1 || n>1
+[error]     |        ^^^^
+[error]     |        value || is not a member of Int
+[error] four errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:15:33
+sbt:CSC447> testOnly fp1tests -- -n fp1ex02
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if n<=1 then n
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] two errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:16:58
+sbt:CSC447> testOnly fp1tests -- -n fp1ex02
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if n<=1 then n=n
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- [E052] Type Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:15
+[error] 104 |   if n<=1 then n=n
+[error]     |                ^^^
+[error]     |                Reassignment to val n
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:17:21
+sbt:CSC447> testOnly fp1tests -- -n fp1ex02
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if n<=1 then n=n
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- [E052] Type Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:15
+[error] 104 |   if n<=1 then n=n
+[error]     |                ^^^
+[error]     |                Reassignment to val n
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:17:23
+sbt:CSC447> testOnly fp1tests -- -n fp1ex02
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if n<=1 then n=Int
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:16
+[error] 104 |   if n<=1 then n=Int
+[error]     |                  ^^^
+[error]     |                  Found:    Int.type
+[error]     |                  Required: Int
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:18:51
+sbt:CSC447> testOnly fp1tests -- -n fp1ex02
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if (n<=1) n
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:4
+[error] 104 |   if (n<=1) n
+[error]     |      ^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:19:48
+sbt:CSC447> testOnly fp1tests -- -n fp1ex02
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if(n<=1) n
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:3
+[error] 104 |   if(n<=1) n
+[error]     |     ^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:21:19
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if(n<=1) n
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:3
+[error] 104 |   if(n<=1) n
+[error]     |     ^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:21:29
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if(n<=1) n
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:3
+[error] 104 |   if(n<=1) n
+[error]     |     ^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:21:34
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if(n<=1) n
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:3
+[error] 104 |   if(n<=1) n
+[error]     |     ^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:21:39
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if(n<=1) n
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:3
+[error] 104 |   if(n<=1) n
+[error]     |     ^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:22:07
+sbt:CSC447> exit
+[info] shutting down sbt server
+
+C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw>sbt
+[info] welcome to sbt 1.8.2 (Oracle Corporation Java 18)
+[info] loading project definition from C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\project
+[info] loading settings for project hw from build.sbt ...
+[info] set current project to CSC447 (in build file:/C:/Users/preei/Documents/MSCS/CSC447/hw%20(1)/hw/)
+[info] sbt server started at local:sbt-server-375a9f271d71a01ca767
+[info] started sbt server
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if(n<=1) n
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:3
+[error] 104 |   if(n<=1) n
+[error]     |     ^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 3 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:22:38
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E018] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:102:24
+[error] 102 |  def fib(n: Int): Int =
+[error]     |                        ^
+[error]     |                        expression expected but val found
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:22:57
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+Welcome to Scala 3.2.0 (18, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala>
+
+scala>   val t1: (Int, String, Boolean) =
+     |     // TODO: Provide definition here.
+     |     (7, "Hello", true)
+     |
+val t1: (Int, String, Boolean) = (7,Hello,true)
+
+scala>
+
+scala> scala>   val t1: (Int, String, Boolean) =
+-- [E018] Syntax Error: --------------------------------------------------------
+1 |scala>   val t1: (Int, String, Boolean) =
+  |         ^^^
+  |         expression expected but val found
+  |
+  | longer explanation available when compiling with `-explain`
+
+scala>      |     // TODO: Provide definition here.
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |     |     // TODO: Provide definition here.
+  |     ^
+  |     Not found: |
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala>      |     (7, "Hello", true)
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |     |     (7, "Hello", true)
+  |     ^
+  |     Not found: |
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> scala>   val t1: (Int, String, Boolean) =
+-- [E018] Syntax Error: --------------------------------------------------------
+1 |scala>   val t1: (Int, String, Boolean) =
+  |         ^^^
+  |         expression expected but val found
+  |
+  | longer explanation available when compiling with `-explain`
+
+scala>      |     // TODO: Provide definition here.
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |     |     // TODO: Provide definition here.
+  |     ^
+  |     Not found: |
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala>  val t1: (Int, String, Boolean) =
+     |      |     // TODO: Provide definition here.
+     |      |     (7, "Hello", true)
+     |
+-- [E006] Not Found Error: -----------------------------------------------------
+2 |     |     // TODO: Provide definition here.
+  |     ^
+  |     Not found: |
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> :quit
+
+[success] Total time: 154 s (02:34), completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:26:48
+sbt:CSC447> testOnly fp1tests -- -n fp1ex03
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:117:17
+[error] 117 |    (7, "Hello", False)
+[error]     |                 ^^^^^
+[error]     |                 Not found: False
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:26:54
+sbt:CSC447> testOnly fp1tests -- -n fp1ex03
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:117:17
+[error] 117 |    (7, "Hello", False)
+[error]     |                 ^^^^^
+[error]     |                 Not found: False
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:27:27
+sbt:CSC447> testOnly fp1tests -- -n fp1ex04
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:117:17
+[error] 117 |    (7, "Hello", False)
+[error]     |                 ^^^^^
+[error]     |                 Not found: False
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:27:44
+sbt:CSC447> testOnly fp1tests -- -n fp1ex04
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[info] fp1tests:
+[info] - EX04 - t1 *** FAILED ***
+[info]   "[H]ello" did not equal "[h]ello" (fp1tests.scala:47)
+[info]   Analysis:
+[info]   "[H]ello" -> "[h]ello"
+[info] Run completed in 408 milliseconds.
+[info] Total number of tests run: 1
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 0, failed 1, canceled 0, ignored 0, pending 0
+[info] *** 1 TEST FAILED ***
+[error] Failed tests:
+[error]         fp1tests
+[error] (Test / testOnly) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:28:11
+sbt:CSC447> testOnly fp1tests -- -n fp1ex04
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[info] fp1tests:
+[info] - EX04 - t1
+[info] Run completed in 203 milliseconds.
+[info] Total number of tests run: 1
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0
+[info] All tests passed.
+[success] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:28:36
+sbt:CSC447> testOnly fp1tests -- -n fp1ex03
+[info] fp1tests:
+[info] - EX03 - p1
+[info] Run completed in 187 milliseconds.
+[info] Total number of tests run: 1
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0
+[info] All tests passed.
+[success] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:28:40
+sbt:CSC447> testOnly fp1tests
+[info] fp1tests:
+[info] - EX01 - factTest
+[info] - EX02 - fib *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:35)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       n = 0,
+[info]       fib (n) = 0
+[info]     )
+[info] - EX03 - p1
+[info] - EX04 - t1
+[info] - EX05 - swap *** FAILED ***
+[info]   java.lang.UnsupportedOperationException:
+[info]   at fp1$.swap(fp1.scala:127)
+[info]   at fp1tests.testFun$proxy5$1(fp1tests.scala:52)
+[info]   at fp1tests.$init$$$anonfun$6(fp1tests.scala:51)
+[info]   at org.scalatest.propspec.AnyPropSpecLike.propertyImpl$$anonfun$1(AnyPropSpecLike.scala:123)
+[info]   at org.scalatest.Transformer.apply$$anonfun$1(Transformer.scala:22)
+[info]   at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+[info]   at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:31)
+[info]   at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+[info]   at org.scalatest.Transformer.apply(Transformer.scala:22)
+[info]   at org.scalatest.Transformer.apply(Transformer.scala:21)
+[info]   ...
+[info] - EX06 - sum *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:67)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(),
+[info]       sum (xs) = 0
+[info]     )
+[info] - EX07 - sumTail *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:73)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(),
+[info]       sum (xs) = 0
+[info]     )
+[info] - EX08 - maxList *** FAILED ***
+[info]   NoSuchElementException was thrown during property evaluation. (fp1tests.scala:91)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(15),
+[info]       max (xs) = 15
+[info]     )
+[info] - EX09 - maxTailAux *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:101)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(15),
+[info]       max (xs) = 15
+[info]     )
+[info] - EX10 - otpu *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:116)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       start = 20,
+[info]       end = 10,
+[info]       otpu (start, end) = List(20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10)
+[info]     )
+[info] Run completed in 468 milliseconds.
+[info] Total number of tests run: 10
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 3, failed 7, canceled 0, ignored 0, pending 0
+[info] *** 7 TESTS FAILED ***
+[error] Failed tests:
+[error]         fp1tests
+[error] (Test / testOnly) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:28:48
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if(n<=2) {return 1}
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:3
+[error] 104 |   if(n<=2) {return 1}
+[error]     |     ^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:33:19
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if(n<=2) {return 1}
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:3
+[error] 104 |   if(n<=2) {return 1}
+[error]     |     ^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:33:53
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if (n<=2) {return 1}
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:4
+[error] 104 |   if (n<=2) {return 1}
+[error]     |      ^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:34:24
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if (n<=1) {return n}
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:4
+[error] 104 |   if (n<=1) {return n}
+[error]     |      ^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:47:59
+sbt:CSC447> testOnly fp1tests -- -n fp1ex03
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:1
+[error] 104 |   if (n<=1) {return n}
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:104:4
+[error] 104 |   if (n<=1) {return n}
+[error]     |      ^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:105:1
+[error] 105 |   else fib(n-1)+fib(n-2)
+[error]     |   ^
+[error]     |   Incompatible combinations of tabs and spaces in indentation prefixes.
+[error]     |   Previous indent : 2 spaces
+[error]     |   Latest indent   : 1 tab
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:48:18
+sbt:CSC447> testOnly fp1tests -- -n fp1ex02
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E018] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:102:24
+[error] 102 |  def fib(n: Int): Int =
+[error]     |                        ^
+[error]     |                        expression expected but unindent found
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:51:13
+sbt:CSC447> testOnly fp1tests -- -n fp1ex02
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E018] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:102:24
+[error] 102 |  def fib(n: Int): Int =
+[error]     |                        ^
+[error]     |                        expression expected but unindent found
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:51:19
+sbt:CSC447> testOnly fp1tests -- -n fp1ex02
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:102:29
+[error] 102 |  def fib(n: Int): Int = {if (n<=1) {return n}
+[error]     |                             ^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:51:54
+sbt:CSC447> testOnly fp1tests -- -n fp1ex02
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E040] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:102:34
+[error] 102 |  def fib(n: Int): Int = {if n<=1 return n
+[error]     |                                  ^^^^^^
+[error]     |                                  'then' expected, but 'return' found
+[error] -- [E129] Potential Issue Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:103:22
+[error] 103 |else fib(n-1)+fib(n-2)}
+[error]     |                      ^
+[error]     |A pure expression does nothing in statement position; you may be omitting necessary parentheses
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] two errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:53:03
+sbt:CSC447> testOnly fp1tests -- -n fp1ex02
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[info] fp1tests:
+[info] - EX02 - fib
+[info] Run completed in 263 milliseconds.
+[info] Total number of tests run: 1
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 1, failed 0, canceled 0, ignored 0, pending 0
+[info] All tests passed.
+[success] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:53:31
+sbt:CSC447> testOnly fp1tests
+[info] fp1tests:
+[info] - EX01 - factTest
+[info] - EX02 - fib
+[info] - EX03 - p1
+[info] - EX04 - t1
+[info] - EX05 - swap *** FAILED ***
+[info]   java.lang.UnsupportedOperationException:
+[info]   at fp1$.swap(fp1.scala:127)
+[info]   at fp1tests.testFun$proxy5$1(fp1tests.scala:52)
+[info]   at fp1tests.$init$$$anonfun$6(fp1tests.scala:51)
+[info]   at org.scalatest.propspec.AnyPropSpecLike.propertyImpl$$anonfun$1(AnyPropSpecLike.scala:123)
+[info]   at org.scalatest.Transformer.apply$$anonfun$1(Transformer.scala:22)
+[info]   at org.scalatest.OutcomeOf.outcomeOf(OutcomeOf.scala:85)
+[info]   at org.scalatest.OutcomeOf.outcomeOf$(OutcomeOf.scala:31)
+[info]   at org.scalatest.OutcomeOf$.outcomeOf(OutcomeOf.scala:104)
+[info]   at org.scalatest.Transformer.apply(Transformer.scala:22)
+[info]   at org.scalatest.Transformer.apply(Transformer.scala:21)
+[info]   ...
+[info] - EX06 - sum *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:67)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(),
+[info]       sum (xs) = 0
+[info]     )
+[info] - EX07 - sumTail *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:73)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(),
+[info]       sum (xs) = 0
+[info]     )
+[info] - EX08 - maxList *** FAILED ***
+[info]   NoSuchElementException was thrown during property evaluation. (fp1tests.scala:91)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(15),
+[info]       max (xs) = 15
+[info]     )
+[info] - EX09 - maxTailAux *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:101)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(15),
+[info]       max (xs) = 15
+[info]     )
+[info] - EX10 - otpu *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:116)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       start = 20,
+[info]       end = 10,
+[info]       otpu (start, end) = List(20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10)
+[info]     )
+[info] Run completed in 311 milliseconds.
+[info] Total number of tests run: 10
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 4, failed 6, canceled 0, ignored 0, pending 0
+[info] *** 6 TESTS FAILED ***
+[error] Failed tests:
+[error]         fp1tests
+[error] (Test / testOnly) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:53:39
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:125:47
+[error] 125 |  def swap(p: (Int, String)): (String, Int) =(p(0),p(1))
+[error]     |                                              ^^^^
+[error]     |                                              Found:    Int
+[error]     |                                              Required: String
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:125:52
+[error] 125 |  def swap(p: (Int, String)): (String, Int) =(p(0),p(1))
+[error]     |                                                   ^^^^
+[error]     |                                                   Found:    String
+[error]     |                                                   Required: Int
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] two errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:57:34
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:125:46
+[error] 125 |  def swap(p: (Int, String)): (String, Int) =(p1)
+[error]     |                                              ^^
+[error]     |                                    Found:    (fp1.p1 : (Int, String))
+[error]     |                                    Required: (String, Int)
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê3:59:12
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+Welcome to Scala 3.2.0 (18, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> import fpq.*
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |import fpq.*
+  |       ^^^
+  |       Not found: fpq
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> import fp1.*
+
+scala> swap(p1)
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |swap(p1)
+  |^^^^
+  |Not found: swap
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> swap
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |swap
+  |^^^^
+  |Not found: swap
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> swap
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |swap
+  |^^^^
+  |Not found: swap
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> swap(p1)
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |swap(p1)
+  |^^^^
+  |Not found: swap
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> :quit
+
+[success] Total time: 341 s (05:41), completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê4:05:51
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+Welcome to Scala 3.2.0 (18, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> import fp1.*
+
+scala> swap
+val res0: ((Int, String)) => (String, Int) = Lambda$8415/0x0000000801079000@1cee1d70
+
+scala> swap(p1)
+java.lang.UnsupportedOperationException
+  at fp1$.swap(fp1.scala:127)
+  ... 62 elided
+
+scala> swap(p1,p0)
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |swap(p1,p0)
+  |        ^^
+  |        Not found: p0
+  |
+  | longer explanation available when compiling with `-explain`
+-- [E007] Type Mismatch Error: -------------------------------------------------
+1 |swap(p1,p0)
+  |     ^^
+  |     Found:    (fp1.p1 : (Int, String))
+  |     Required: Int
+  |
+  | longer explanation available when compiling with `-explain`
+2 errors found
+
+scala> swap(p1)
+java.lang.UnsupportedOperationException
+  at fp1$.swap(fp1.scala:127)
+  ... 62 elided
+
+scala> swap(p(0),p(1))
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |swap(p(0),p(1))
+  |     ^
+  |     Not found: p
+  |
+  | longer explanation available when compiling with `-explain`
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |swap(p(0),p(1))
+  |          ^
+  |          Not found: p
+  |
+  | longer explanation available when compiling with `-explain`
+2 errors found
+
+scala> swap(p(1),p(0))
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |swap(p(1),p(0))
+  |     ^
+  |     Not found: p
+  |
+  | longer explanation available when compiling with `-explain`
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |swap(p(1),p(0))
+  |          ^
+  |          Not found: p
+  |
+  | longer explanation available when compiling with `-explain`
+2 errors found
+
+scala> swap(p1(1),p1(0))
+-- [E007] Type Mismatch Error: -------------------------------------------------
+1 |swap(p1(1),p1(0))
+  |     ^^^^^
+  |     Found:    String
+  |     Required: Int
+  |
+  | longer explanation available when compiling with `-explain`
+-- [E007] Type Mismatch Error: -------------------------------------------------
+1 |swap(p1(1),p1(0))
+  |           ^^^^^
+  |           Found:    Int
+  |           Required: String
+  |
+  | longer explanation available when compiling with `-explain`
+2 errors found
+
+scala> swap(p1(0),p1(1))
+java.lang.UnsupportedOperationException
+  at fp1$.swap(fp1.scala:127)
+  ... 62 elided
+
+scala> :quit
+
+[success] Total time: 228 s (03:48), completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê4:09:41
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E018] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:125:45
+[error] 125 |  def swap(p: (Int, String)): (String, Int) =
+[error]     |                                             ^
+[error]     |                                expression expected but unindent found
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê4:09:44
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+Too slow
+[info] fp1tests:
+[info] - EX01 - factTest
+[info] - EX02 - fib
+[info] - EX03 - p1
+[info] - EX04 - t1
+[info] - EX05 - swap *** FAILED ***
+[info]   The test did not complete within the specified 1 second time limit. (fp1tests.scala:51)
+[info] - EX06 - sum *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:67)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(),
+[info]       sum (xs) = 0
+[info]     )
+[info] - EX07 - sumTail *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:73)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(),
+[info]       sum (xs) = 0
+[info]     )
+[info] - EX08 - maxList *** FAILED ***
+[info]   NoSuchElementException was thrown during property evaluation. (fp1tests.scala:91)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(15),
+[info]       max (xs) = 15
+[info]     )
+[info] - EX09 - maxTailAux *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:101)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(15),
+[info]       max (xs) = 15
+[info]     )
+[info] - EX10 - otpu *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:116)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       start = 20,
+[info]       end = 10,
+[info]       otpu (start, end) = List(20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10)
+[info]     )
+[info] Run completed in 1 second, 464 milliseconds.
+[info] Total number of tests run: 10
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 4, failed 6, canceled 0, ignored 0, pending 0
+[info] *** 6 TESTS FAILED ***
+[error] Failed tests:
+[error]         fp1tests
+[error] (Test / testOnly) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 2 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê4:10:23
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:125:52
+[error] 125 |  def swap(p: (Int, String)): (String, Int) =swap(p1(1),p1(0))    // TODO: Provide definition here.
+[error]     |                                                  ^^^^^
+[error]     |                                                  Found:    String
+[error]     |                                                  Required: Int
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:125:58
+[error] 125 |  def swap(p: (Int, String)): (String, Int) =swap(p1(1),p1(0))    // TODO: Provide definition here.
+[error]     |                                                        ^^^^^
+[error]     |                                                      Found:    Int
+[error]     |                                                      Required: String
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] two errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê4:11:02
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[info] fp1tests:
+[info] - EX01 - factTest
+[info] - EX02 - fib
+[info] - EX03 - p1
+[info] - EX04 - t1
+[info] - EX05 - swap
+[info] - EX06 - sum *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:67)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(),
+[info]       sum (xs) = 0
+[info]     )
+[info] - EX07 - sumTail *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:73)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(),
+[info]       sum (xs) = 0
+[info]     )
+[info] - EX08 - maxList *** FAILED ***
+[info]   NoSuchElementException was thrown during property evaluation. (fp1tests.scala:91)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(15),
+[info]       max (xs) = 15
+[info]     )
+[info] - EX09 - maxTailAux *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:101)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(15),
+[info]       max (xs) = 15
+[info]     )
+[info] - EX10 - otpu *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:116)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       start = 20,
+[info]       end = 10,
+[info]       otpu (start, end) = List(20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10)
+[info]     )
+[info] Run completed in 299 milliseconds.
+[info] Total number of tests run: 10
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 5, failed 5, canceled 0, ignored 0, pending 0
+[info] *** 5 TESTS FAILED ***
+[error] Failed tests:
+[error]         fp1tests
+[error] (Test / testOnly) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê4:12:34
+sbt:CSC447> console
+Welcome to Scala 3.2.0 (18, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> def printCounterAux [X] (xs:List[X], count:Int) : Unit =
+     |   xs match
+     |     case Nil   => ()
+     |     case y::ys =>
+     |       println ("[%03d] %s".format (count, y))
+     |       printCounterAux (ys, count + 1)
+     |
+def printCounterAux[X](xs: List[X], count: Int): Unit
+
+scala> def printCounter [X] (xs:List[X]) : Unit =
+     |   printCounterAux (xs, 1)
+     |
+def printCounter[X](xs: List[X]): Unit
+
+scala> @main def main() =
+     |   printCounter (List ("the", "rain", "in", "spain"))
+     |
+def main(): Unit
+
+scala>
+
+scala>
+
+scala> def printCounterAux [X] (xs:List[X], count:Int) : Unit =
+     |   xs match
+     |     case Nil   => ()
+     |     case y::ys =>
+     |       println ("[%03d] %s".format (count, y))
+     |       printCounterAux (ys, count + 1)
+     |
+def printCounterAux[X](xs: List[X], count: Int): Unit
+
+scala> def printCounter [X] (xs:List[X]) : Unit =
+     |   printCounterAux (xs, 1)
+     |
+def printCounter[X](xs: List[X]): Unit
+
+scala> @main def main() =
+     |   printCounter (List ("the", "rain", "in", "spain"))
+     |
+def main(): Unit
+
+scala>
+
+scala>
+
+scala>
+
+scala> :quit
+
+[success] Total time: 131 s (02:11), completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê4:34:54
+sbt:CSC447> compile
+[success] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê4:34:56
+sbt:CSC447> compile fp1
+[error] Expected whitespace character
+[error] Expected '/'
+[error] compile fp1
+[error]         ^
+sbt:CSC447> help
+
+  <command> (; <command>)*                       Runs the provided semicolon-separated commands.
+  about                                          Displays basic information about sbt and the build.
+  tasks                                          Lists the tasks defined for the current project.
+  settings                                       Lists the settings defined for the current project.
+  reload                                         (Re)loads the current project or changes to plugins project or returns from it.
+  new                                            Creates a new sbt build.
+  projects                                       Lists the names of available projects or temporarily adds/removes extra builds to the session.
+  project                                        Displays the current project or changes to the provided `project`.
+  set [every] <setting>                          Evaluates a Setting and applies it to the current project.
+  session                                        Manipulates session settings.  For details, run 'help session'.
+  inspect [tree|uses|definitions|actual] <key>   Prints the value for 'key', the defining scope, delegates, related definitions, and dependencies.
+  <log-level>                                    Sets the logging level to 'log-level'.  Valid levels: debug, info, warn, error
+  plugins                                        Lists currently available plugins.
+  --addPluginSbtFile=<file>                      Adds the given *.sbt file to the plugin build.
+  last                                           Displays output from a previous command or the output from a specific task.
+  last-grep                                      Shows lines from the last output for 'key' that match 'pattern'.
+  lastGrep                                       Shows lines from the last output for 'key' that match 'pattern'.
+  export <tasks>+                                Executes tasks and displays the equivalent command lines.
+  show <key>                                     Displays the result of evaluating the setting or task associated with 'key'.
+  print <key>                                    Prints the result of evaluating the setting or task associated with 'key' to standard output.
+  all <task>+                                    Executes all of the specified tasks concurrently.
+  ~ <command>                                    Executes the specified command whenever source files change.
+  help                                           Displays this help message or prints detailed help on requested commands (run 'help <command>').
+  completions                                    Displays a list of completions for the given argument string (run 'completions <string>').
+  early(<command>)                               Schedules a command to run before other commands on startup.
+  exit                                           Terminates the remote client or the build when called from the console.  shutdown                                       Terminates the build.
+
+More command help available using 'help <command>' for:
+  !, +, ++, +-, <, ^, ^^, alias, append, apply, clearCaches, client, eval, iflast, java+, java++, onFailure, reboot, shell, startServer
+
+sbt:CSC447> compile fp1.scala
+[error] Expected whitespace character
+[error] Expected '/'
+[error] compile fp1.scala
+[error]         ^
+sbt:CSC447> compilefp1.scala
+[error] Expected ID character
+[error] Not a valid command: compilefp1 (similar: completions)
+[error] Expected project ID
+[error] Expected configuration
+[error] Expected ':'
+[error] Expected key
+[error] Not a valid key: compilefp1 (similar: compile, compilers, compileSplit)
+[error] compilefp1.scala
+[error]           ^
+sbt:CSC447> compile fp1.scala
+[error] Expected whitespace character
+[error] Expected '/'
+[error] compile fp1.scala
+[error]         ^
+sbt:CSC447> testOnly fp1tests
+[info] fp1tests:
+[info] - EX01 - factTest
+[info] - EX02 - fib
+[info] - EX03 - p1
+[info] - EX04 - t1
+[info] - EX05 - swap
+[info] - EX06 - sum *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:67)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(),
+[info]       sum (xs) = 0
+[info]     )
+[info] - EX07 - sumTail *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:73)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(),
+[info]       sum (xs) = 0
+[info]     )
+[info] - EX08 - maxList *** FAILED ***
+[info]   NoSuchElementException was thrown during property evaluation. (fp1tests.scala:91)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(15),
+[info]       max (xs) = 15
+[info]     )
+[info] - EX09 - maxTailAux *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:101)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(15),
+[info]       max (xs) = 15
+[info]     )
+[info] - EX10 - otpu *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:116)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       start = 20,
+[info]       end = 10,
+[info]       otpu (start, end) = List(20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10)
+[info]     )
+[info] Run completed in 430 milliseconds.
+[info] Total number of tests run: 10
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 5, failed 5, canceled 0, ignored 0, pending 0
+[info] *** 5 TESTS FAILED ***
+[error] Failed tests:
+[error]         fp1tests
+[error] (Test / testOnly) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê4:37:10
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:125:58
+[error] 125 |  def swap(p: (Int, String)): (String, Int) =(p(1),p(0))  ()
+[error]     |                                             ^^^^^^^^^^^^^^^
+[error]     |missing argument for parameter n of method apply in trait NonEmptyTuple: (n: Int): Tuple.Elem[This, n.type]
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê4:42:11
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[info] fp1tests:
+[info] - EX01 - factTest
+[info] - EX02 - fib
+[info] - EX03 - p1
+[info] - EX04 - t1
+[info] - EX05 - swap
+[info] - EX06 - sum
+[info] - EX07 - sumTail *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:73)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(),
+[info]       sum (xs) = 0
+[info]     )
+[info] - EX08 - maxList *** FAILED ***
+[info]   NoSuchElementException was thrown during property evaluation. (fp1tests.scala:91)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(15),
+[info]       max (xs) = 15
+[info]     )
+[info] - EX09 - maxTailAux *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:101)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(15),
+[info]       max (xs) = 15
+[info]     )
+[info] - EX10 - otpu *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:116)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       start = 20,
+[info]       end = 10,
+[info]       otpu (start, end) = List(20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10)
+[info]     )
+[info] Run completed in 269 milliseconds.
+[info] Total number of tests run: 10
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 6, failed 4, canceled 0, ignored 0, pending 0
+[info] *** 4 TESTS FAILED ***
+[error] Failed tests:
+[error]         fp1tests
+[error] (Test / testOnly) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê4:42:36
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:150:35
+[error] 150 |  def sumTail(xs: List[Int]): Int =(0,xs)
+[error]     |                                   ^^^^^^
+[error]     |                                   Found:    (Int, List[Int])
+[error]     |                                   Required: Int
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê4:56:34
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:150:46
+[error] 150 |  def sumTail(xs: List[Int]): Int =sumTailAux(0,xs)
+[error]     |                                              ^
+[error]     |                                              Found:    (0 : Int)
+[error]     |                                              Required: List[Int]
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:150:48
+[error] 150 |  def sumTail(xs: List[Int]): Int =sumTailAux(0,xs)
+[error]     |                                                ^^
+[error]     |                                            Found:    (xs : List[Int])
+[error]     |                                            Required: Int
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] two errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê4:58:59
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:150:46
+[error] 150 |  def sumTail(xs: List[Int]): Int =sumTailAux(0,xs)
+[error]     |                                              ^
+[error]     |                                              Found:    (0 : Int)
+[error]     |                                              Required: List[Int]
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:150:48
+[error] 150 |  def sumTail(xs: List[Int]): Int =sumTailAux(0,xs)
+[error]     |                                                ^^
+[error]     |                                            Found:    (xs : List[Int])
+[error]     |                                            Required: Int
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] two errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê5:05:50
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[info] fp1tests:
+[info] - EX01 - factTest
+[info] - EX02 - fib
+[info] - EX03 - p1
+[info] - EX04 - t1
+[info] - EX05 - swap
+[info] - EX06 - sum
+[info] - EX07 - sumTail
+[info] - EX08 - maxList *** FAILED ***
+[info]   NoSuchElementException was thrown during property evaluation. (fp1tests.scala:91)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(15),
+[info]       max (xs) = 15
+[info]     )
+[info] - EX09 - maxTailAux *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:101)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(15),
+[info]       max (xs) = 15
+[info]     )
+[info] - EX10 - otpu *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:116)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       start = 20,
+[info]       end = 10,
+[info]       otpu (start, end) = List(20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10)
+[info]     )
+[info] Run completed in 574 milliseconds.
+[info] Total number of tests run: 10
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 7, failed 3, canceled 0, ignored 0, pending 0
+[info] *** 3 TESTS FAILED ***
+[error] Failed tests:
+[error]         fp1tests
+[error] (Test / testOnly) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê5:07:01
+sbt:CSC447> console
+Welcome to Scala 3.2.0 (18, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> val list1= List(1,2,3,4,5)
+val list1: List[Int] = List(1, 2, 3, 4, 5)
+
+scala> list1.max
+val res0: Int = 5
+
+scala> list1.min
+val res1: Int = 1
+
+scala> list1.sort
+-- [E008] Not Found Error: -----------------------------------------------------
+1 |list1.sort
+  |^^^^^^^^^^
+  |value sort is not a member of List[Int] - did you mean list1.sortBy?
+1 error found
+
+scala> list1.sorted
+val res2: List[Int] = List(1, 2, 3, 4, 5)
+
+scala> list1.head
+val res3: Int = 1
+
+scala> val list2= List(6,2,3,4,5)
+val list2: List[Int] = List(6, 2, 3, 4, 5)
+
+scala> list2.sorted
+val res4: List[Int] = List(2, 3, 4, 5, 6)
+
+scala> list2.tail
+val res5: List[Int] = List(2, 3, 4, 5)
+
+scala> list2.sorted.reverse
+val res6: List[Int] = List(6, 5, 4, 3, 2)
+
+scala> list2.head
+val res7: Int = 6
+
+scala> def maxlist(xs:List[Int]):Int=
+     | xs.sorted.reverse
+-- [E007] Type Mismatch Error: -------------------------------------------------
+2 |xs.sorted.reverse
+  |^^^^^^^^^^^^^^^^^
+  |Found:    List[Int]
+  |Required: Int
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> def maxlist(xs:List[Int]):Int=
+     | xs.sorted.reverse return xs.head
+-- Error: ----------------------------------------------------------------------
+2 |xs.sorted.reverse return xs.head
+  |                  ^^^^^^
+  |                  end of statement expected but 'return' found
+
+scala> def maxlist(xs:List[Int]):Int=
+     | xs.sorted.reverse then xs.head
+-- Error: ----------------------------------------------------------------------
+2 |xs.sorted.reverse then xs.head
+  |                  ^^^^
+  |                  end of statement expected but 'then' found
+
+scala> def maxlist(xs:List[Int]):Int=
+     | xs.sorted.reverse; return xs.head
+-- [E007] Type Mismatch Error: -------------------------------------------------
+2 |xs.sorted.reverse; return xs.head
+  |^^^^^^^^^^^^^^^^^
+  |Found:    List[Int]
+  |Required: Int
+  |
+  | longer explanation available when compiling with `-explain`
+-- [E091] Syntax Error: --------------------------------------------------------
+2 |xs.sorted.reverse; return xs.head
+  |                   ^^^^^^^^^^^^^^
+  |                   return outside method definition
+  |
+  | longer explanation available when compiling with `-explain`
+2 errors found
+
+scala> def maxlist(xs:List[Int]):Int=
+     | xs.sorted.reverse;  xs.head
+-- [E007] Type Mismatch Error: -------------------------------------------------
+2 |xs.sorted.reverse;  xs.head
+  |^^^^^^^^^^^^^^^^^
+  |Found:    List[Int]
+  |Required: Int
+  |
+  | longer explanation available when compiling with `-explain`
+-- [E006] Not Found Error: -----------------------------------------------------
+2 |xs.sorted.reverse;  xs.head
+  |                    ^^
+  |                    Not found: xs
+  |
+  | longer explanation available when compiling with `-explain`
+2 errors found
+
+scala> :quit
+
+[success] Total time: 2663 s (44:23), completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê5:56:10
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E018] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:163:35
+[error] 163 |  def maxList(xs: List[Int]): Int =
+[error]     |                                   ^
+[error]     |                                expression expected but unindent found
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê5:56:12
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E103] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:164:0
+[error] 164 |if (xs.size==1) then xs.head
+[error]     |^^
+[error]     |Illegal start of toplevel definition
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:163:35
+[error] 163 |  def maxList(xs: List[Int]): Int =if (xs.isEmpty) then throw new java.util.NoSuchElementException
+[error]     |                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[error]     |               Found:    Unit
+[error]     |               Required: Int
+[error]     |               Maybe you are missing an else part for the conditional?
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] two errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê5:56:36
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:163:39
+[error] 163 |  def maxList(xs: List[Int]): Int ={if (xs.isEmpty)
+[error]     |                                       ^^^^^^^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- [E018] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:176:56
+[error] 176 |  def maxTailAux(xs: List[Int], accumulator: Int): Int =
+[error]     |                                                        ^
+[error]     |                                expression expected but unindent found
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:166:19
+[error] 166 |else if (xs.head > max (xs.tail)) then xs.head
+[error]     |                   ^^^
+[error]     |                   Not found: max
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:167:5
+[error] 167 |else max(xs.tail)}
+[error]     |     ^^^
+[error]     |     Not found: max
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:186:22
+[error] 186 |      case y :: ys => maxTailAux(ys, y)
+[error]     |                      ^^^^^^^^^^
+[error]     |                      Not found: maxTailAux
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] 5 errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê5:58:49
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:163:39
+[error] 163 |  def maxList(xs: List[Int]): Int ={if (xs.isEmpty)
+[error]     |                                       ^^^^^^^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:166:19
+[error] 166 |else if (xs.head > max (xs.tail)) then xs.head
+[error]     |                   ^^^
+[error]     |                   Not found: max
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:167:5
+[error] 167 |else max(xs.tail)}
+[error]     |     ^^^
+[error]     |     Not found: max
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê6:00:53
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:163:39
+[error] 163 |  def maxList(xs: List[Int]): Int ={if (xs.isEmpty)
+[error]     |                                       ^^^^^^^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- [E018] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:164:43
+[error] 164 |throw new java.util.NoSuchElementException(with no argument)
+[error]     |                                           ^^^^
+[error]     |                                    expression expected but with found
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E051] Reference Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:164:10
+[error] 164 |throw new java.util.NoSuchElementException(with no argument)
+[error]     |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[error]     |Ambiguous overload. The overloaded alternatives of constructor NoSuchElementException in class NoSuchElementException with types
+[error]     | (x$0: String | Null): NoSuchElementException
+[error]     | (x$0: Throwable | Null): NoSuchElementException
+[error]     |both match arguments (Null)
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:167:19
+[error] 167 |else if (xs.head > max(xs.tail)) then xs.head
+[error]     |                   ^^^
+[error]     |                   Not found: max
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:168:5
+[error] 168 |else max(xs.tail)}
+[error]     |     ^^^
+[error]     |     Not found: max
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] 5 errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê6:02:59
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:163:39
+[error] 163 |  def maxList(xs: List[Int]): Int ={if (xs.isEmpty)
+[error]     |                                       ^^^^^^^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- [E018] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:164:43
+[error] 164 |throw new java.util.NoSuchElementException(with no argument)
+[error]     |                                           ^^^^
+[error]     |                                    expression expected but with found
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E051] Reference Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:164:10
+[error] 164 |throw new java.util.NoSuchElementException(with no argument)
+[error]     |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[error]     |Ambiguous overload. The overloaded alternatives of constructor NoSuchElementException in class NoSuchElementException with types
+[error]     | (x$0: String | Null): NoSuchElementException
+[error]     | (x$0: Throwable | Null): NoSuchElementException
+[error]     |both match arguments (Null)
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:167:19
+[error] 167 |else if (xs.head > max(xs.tail)) then xs.head
+[error]     |                   ^^^
+[error]     |                   Not found: max
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:168:5
+[error] 168 |else max(xs.tail)}
+[error]     |     ^^^
+[error]     |     Not found: max
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] 5 errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê6:03:51
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:163:39
+[error] 163 |  def maxList(xs: List[Int]): Int ={if (xs.isEmpty)
+[error]     |                                       ^^^^^^^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- [E018] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:164:43
+[error] 164 |throw new java.util.NoSuchElementException(with no argument)
+[error]     |                                           ^^^^
+[error]     |                                    expression expected but with found
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E051] Reference Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:164:10
+[error] 164 |throw new java.util.NoSuchElementException(with no argument)
+[error]     |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[error]     |Ambiguous overload. The overloaded alternatives of constructor NoSuchElementException in class NoSuchElementException with types
+[error]     | (x$0: String | Null): NoSuchElementException
+[error]     | (x$0: Throwable | Null): NoSuchElementException
+[error]     |both match arguments (Null)
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:167:19
+[error] 167 |else if (xs.head > max(xs.tail)) then xs.head
+[error]     |                   ^^^
+[error]     |                   Not found: max
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:168:5
+[error] 168 |else max(xs.tail)}
+[error]     |     ^^^
+[error]     |     Not found: max
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] 5 errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê6:04:22
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:167:23
+[error] 167 |    else if (xs.head > max(xs.tail)) then xs.head
+[error]     |                       ^^^
+[error]     |                       Not found: max
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:168:9
+[error] 168 |    else max(xs.tail)}
+[error]     |         ^^^
+[error]     |         Not found: max
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] two errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê6:08:46
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E040] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:176:2
+[error] 176 |  def maxTailAux(xs: List[Int], accumulator: Int): Int =throw NoSuchElementException()
+[error]     |  ^^^
+[error]     |  ')' expected, but 'def' found
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:167:28
+[error] 167 |    else if (xs.head.max(xs.tail)
+[error]     |                         ^^^^^^^
+[error]     |                         Found:    List[Int @uncheckedVariance]
+[error]     |                         Required: Int
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E129] Potential Issue Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:201:0
+[error] 201 |    throw UnsupportedOperationException()
+[error]     |                                         ^
+[error]     |A pure expression does nothing in statement position; you may be omitting necessary parentheses
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê6:15:43
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E040] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:176:2
+[error] 176 |  def maxTailAux(xs: List[Int], accumulator: Int): Int =throw UnsupportedOperationException()
+[error]     |  ^^^
+[error]     |  ')' expected, but 'def' found
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:167:28
+[error] 167 |    else if (xs.head.max(xs.tail)
+[error]     |                         ^^^^^^^
+[error]     |                         Found:    List[Int @uncheckedVariance]
+[error]     |                         Required: Int
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E129] Potential Issue Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:202:0
+[error] 202 |    throw UnsupportedOperationException()
+[error]     |                                         ^
+[error]     |A pure expression does nothing in statement position; you may be omitting necessary parentheses
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê6:17:11
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E040] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:176:2
+[error] 176 |  def maxTailAux(xs: List[Int], accumulator: Int): Int =
+[error]     |  ^^^
+[error]     |  ')' expected, but 'def' found
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:167:28
+[error] 167 |    else if (xs.head.max(xs.tail)
+[error]     |                         ^^^^^^^
+[error]     |                         Found:    List[Int @uncheckedVariance]
+[error]     |                         Required: Int
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E129] Potential Issue Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:199:0
+[error] 199 |    throw UnsupportedOperationException()
+[error]     |                                         ^
+[error]     |A pure expression does nothing in statement position; you may be omitting necessary parentheses
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] three errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê6:17:49
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E040] Syntax Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:167:34
+[error] 167 |    else if (xs.head.max(xs.tail))}
+[error]     |                                  ^
+[error]     |                                  'then' expected, but '}' found
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:167:28
+[error] 167 |    else if (xs.head.max(xs.tail))}
+[error]     |                         ^^^^^^^
+[error]     |                         Found:    List[Int @uncheckedVariance]
+[error]     |                         Required: Int
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] two errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê6:18:45
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:167:12
+[error] 167 |    else if (xs.head>max(xs.tail)) xs.head
+[error]     |            ^^^^^^^^^^^^^^^^^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:168:9
+[error] 168 |    else max(xs.tail)
+[error]     |         ^^^
+[error]     |         Not found: max
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] two errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê6:20:22
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:166:2
+[error] 166 |  if (xs.size == 1) then xs.head
+[error]     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[error]     |  Found:    Unit
+[error]     |  Required: Int
+[error]     |  Maybe you are missing an else part for the conditional?
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê6:20:54
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:166:5
+[error] 166 |  if (xs.size == 1)  xs.head
+[error]     |     ^^^^^^^^^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê6:21:29
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:166:5
+[error] 166 |  if (xs.size = 1)  xs
+[error]     |     ^^^^^^^^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] -- [E129] Potential Issue Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:166:20
+[error] 166 |  if (xs.size = 1)  xs
+[error]     |                    ^^
+[error]     |A pure expression does nothing in statement position; you may be omitting necessary parentheses
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] two errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê7:27:00
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:166:5
+[error] 166 |  if (xs.size = 1)  xs.head
+[error]     |     ^^^^^^^^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê7:27:19
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:166:5
+[error] 166 |  if (xs.length = 1)  xs.head
+[error]     |     ^^^^^^^^^^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê7:27:46
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:166:2
+[error] 166 |  if xs.length == 1 then  xs.head
+[error]     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[error]     |  Found:    Unit
+[error]     |  Required: Int
+[error]     |  Maybe you are missing an else part for the conditional?
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê7:45:44
+sbt:CSC447> -explain
+[error] Expected 'error'
+[error] -explain
+[error]   ^
+sbt:CSC447> console -explain
+[error] Expected whitespace character
+[error] Expected '/'
+[error] console -explain
+[error]         ^
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:166:2
+[error] 166 |  if xs.length == 1 then  xs.head
+[error]     |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[error]     |  Found:    Unit
+[error]     |  Required: Int
+[error]     |  Maybe you are missing an else part for the conditional?
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê7:46:16
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E050] Type Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:166:8
+[error] 166 |  if xs.length() == 1 then  xs.head
+[error]     |     ^^^^^^^^^
+[error]     |     method length in class List does not take parameters
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê7:48:28
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E050] Type Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:166:8
+[error] 166 |  if xs.size() == 1 then  xs.head
+[error]     |     ^^^^^^^
+[error]     |     method size in trait SeqOps does not take parameters
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê7:48:46
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+Welcome to Scala 3.2.0 (18, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> Val 1lst=List[1,2,3]
+-- Error: ----------------------------------------------------------------------
+1 |Val 1lst=List[1,2,3]
+  |    ^
+  |    end of statement expected but long literal found
+
+scala> Val lst=List[1,2,3]
+-- [E018] Syntax Error: --------------------------------------------------------
+1 |Val lst=List[1,2,3]
+  |       ^
+  |       expression expected but = found
+  |
+  | longer explanation available when compiling with `-explain`
+
+scala> Val lst = List[1,2,3]
+-- [E018] Syntax Error: --------------------------------------------------------
+1 |Val lst = List[1,2,3]
+  |        ^
+  |        expression expected but = found
+  |
+  | longer explanation available when compiling with `-explain`
+
+scala> Val lst: List[Int] = List[1,2,3]
+-- [E018] Syntax Error: --------------------------------------------------------
+1 |Val lst: List[Int] = List[1,2,3]
+  |       ^
+  |       expression expected but : found
+  |
+  | longer explanation available when compiling with `-explain`
+-- Error: ----------------------------------------------------------------------
+1 |Val lst: List[Int] = List[1,2,3]
+  |                   ^
+  |                   end of statement expected but '=' found
+
+scala> Val lst: List[Int] = List[1,2,3]
+-- [E018] Syntax Error: --------------------------------------------------------
+1 |Val lst: List[Int] = List[1,2,3]
+  |       ^
+  |       expression expected but : found
+  |
+  | longer explanation available when compiling with `-explain`
+-- Error: ----------------------------------------------------------------------
+1 |Val lst: List[Int] = List[1,2,3]
+  |                   ^
+  |                   end of statement expected but '=' found
+
+scala>  val list1= List(1,2,3,4,5)
+val list1: List[Int] = List(1, 2, 3, 4, 5)
+
+scala> list1.size()
+-- [E050] Type Error: ----------------------------------------------------------
+1 |list1.size()
+  |^^^^^^^^^^
+  |method size in trait SeqOps does not take parameters
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> list1.size
+val res0: Int = 5
+
+scala> if list1.size = 5 then list1.head
+-- [E052] Type Error: ----------------------------------------------------------
+1 |if list1.size = 5 then list1.head
+  |   ^^^^^^^^^^^^^^
+  |   Reassignment to val size
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> if list1.size == 5 then list1.head
+
+scala>
+
+scala> if (list1.size == 5) list1.head
+-- Error: ----------------------------------------------------------------------
+1 |if (list1.size == 5) list1.head
+  |   ^^^^^^^^^^^^^^^^^
+  |   This construct is not allowed under -new-syntax.
+
+scala> if list1.size == 5 then list1.head
+
+scala> list1.head
+val res1: Int = 1
+
+scala> if list1.size == 5 then list1.tail
+
+scala> if list1.size == 5 then list1.tail
+
+scala> def maxList(xs: List[Int]): Int ={
+     |   if (xs.isEmpty) then
+     |     throw new java.util.NoSuchElementException
+     |   if xs.size == 1 then  xs.head
+     |     else if (xs.head>max(xs.tail)) xs.head
+-- Error: ----------------------------------------------------------------------
+5 |    else if (xs.head>max(xs.tail)) xs.head
+  |            ^^^^^^^^^^^^^^^^^^^^^^
+  |            This construct is not allowed under -new-syntax.
+-- [E040] Syntax Error: --------------------------------------------------------
+5 |    else if (xs.head>max(xs.tail)) xs.head
+  |                                          ^
+  |                                          '}' expected, but eof found
+
+scala> def maxList(xs: List[Int]): Int ={
+     |   if (xs.isEmpty) then
+     |     throw new java.util.NoSuchElementException
+     |   if xs.size == 1 then  xs.head
+     |     else if xs.head>max(xs.tail) then  xs.head}
+-- [E006] Not Found Error: -----------------------------------------------------
+5 |    else if xs.head>max(xs.tail) then  xs.head}
+  |                    ^^^
+  |                    Not found: max
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> def maxList(xs: List[Int]): Int ={
+     |   if (xs.isEmpty) then
+     |     throw new java.util.NoSuchElementException
+     |   if xs.size == 1 then  xs.head
+     |     else if xs.head> max(xs.tail) then  xs.head}
+-- [E006] Not Found Error: -----------------------------------------------------
+5 |    else if xs.head> max(xs.tail) then  xs.head}
+  |                     ^^^
+  |                     Not found: max
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> def maxList(xs: List[Int]): Int ={
+     |   if (xs.isEmpty) then
+     |     throw new java.util.NoSuchElementException
+     |   if xs.size == 1 then  xs.head
+     |     else if xs.head> Max(xs.tail) then  xs.head}
+-- [E006] Not Found Error: -----------------------------------------------------
+5 |    else if xs.head> Max(xs.tail) then  xs.head}
+  |                     ^^^
+  |                     Not found: Max
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> list1.max
+val res2: Int = 5
+
+scala> list1.tail.max
+val res3: Int = 5
+
+scala> 1 max 2
+val res4: Int = 2
+
+scala> list1.head max list.tail
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |list1.head max list.tail
+  |               ^^^^
+  |               Not found: list
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> list1.head max list1.tail
+-- [E007] Type Mismatch Error: -------------------------------------------------
+1 |list1.head max list1.tail
+  |               ^^^^^^^^^^
+  |               Found:    List[Int @uncheckedVariance]
+  |               Required: Int
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> list1.head max list1.last
+val res5: Int = 5
+
+scala> list1.head max max(list1)
+-- [E006] Not Found Error: -----------------------------------------------------
+1 |list1.head max max(list1)
+  |               ^^^
+  |               Not found: max
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> list1.head max (list1)
+-- [E007] Type Mismatch Error: -------------------------------------------------
+1 |list1.head max (list1)
+  |                ^^^^^
+  |                Found:    (list1 : List[Int])
+  |                Required: Int
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> list1.head max (list1)
+-- [E007] Type Mismatch Error: -------------------------------------------------
+1 |list1.head max (list1)
+  |                ^^^^^
+  |                Found:    (list1 : List[Int])
+  |                Required: Int
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> :quit
+
+[success] Total time: 718 s (11:58), completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê8:04:49
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:167:12
+[error] 167 |    else if (xs.head> xs.tail.max) xs.head
+[error]     |            ^^^^^^^^^^^^^^^^^^^^^^
+[error]     |This construct is not allowed under -new-syntax.
+[error]     |This construct can be rewritten automatically under -rewrite -source 3.0-migration -new-syntax.
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê8:04:50
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+Welcome to Scala 3.2.0 (18, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> :quit
+
+[success] Total time: 3 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê8:05:17
+sbt:CSC447> testOnly fp1tests
+[info] fp1tests:
+[info] - EX01 - factTest
+[info] - EX02 - fib
+[info] - EX03 - p1
+[info] - EX04 - t1
+[info] - EX05 - swap
+[info] - EX06 - sum
+[info] - EX07 - sumTail
+[info] - EX08 - maxList
+[info] - EX09 - maxTailAux *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:101)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       xs = List(15),
+[info]       max (xs) = 15
+[info]     )
+[info] - EX10 - otpu *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:116)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       start = 20,
+[info]       end = 10,
+[info]       otpu (start, end) = List(20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10)
+[info]     )
+[info] Run completed in 468 milliseconds.
+[info] Total number of tests run: 10
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 8, failed 2, canceled 0, ignored 0, pending 0
+[info] *** 2 TESTS FAILED ***
+[error] Failed tests:
+[error]         fp1tests
+[error] (Test / testOnly) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê8:05:22
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:180:53
+[error] 180 |    else if xs.head > accumulator then maxTailAux(xs.head,xs.tail)
+[error]     |                                                  ^^^^^^^
+[error]     |                                                  Found:    Int
+[error]     |                                                  Required: List[Int]
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:180:61
+[error] 180 |    else if xs.head > accumulator then maxTailAux(xs.head,xs.tail)
+[error]     |                                                          ^^^^^^^
+[error]     |                                Found:    List[Int @uncheckedVariance]
+[error]     |                                Required: Int
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:182:15
+[error] 182 |    maxTailAux(accumulator,xs.tail)
+[error]     |               ^^^^^^^^^^^
+[error]     |               Found:    (accumulator : Int)
+[error]     |               Required: List[Int]
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:182:30
+[error] 182 |    maxTailAux(accumulator,xs.tail)
+[error]     |                           ^^^^^^^
+[error]     |                           Found:    List[Int @uncheckedVariance]
+[error]     |                           Required: Int
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] four errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê8:43:46
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[info] fp1tests:
+[info] - EX01 - factTest
+[info] - EX02 - fib
+[info] - EX03 - p1
+[info] - EX04 - t1
+[info] - EX05 - swap
+[info] - EX06 - sum
+[info] - EX07 - sumTail
+[info] - EX08 - maxList
+[info] - EX09 - maxTailAux
+[info] - EX10 - otpu *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:116)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       start = 20,
+[info]       end = 10,
+[info]       otpu (start, end) = List(20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10)
+[info]     )
+[info] Run completed in 344 milliseconds.
+[info] Total number of tests run: 10
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 9, failed 1, canceled 0, ignored 0, pending 0
+[info] *** 1 TEST FAILED ***
+[error] Failed tests:
+[error]         fp1tests
+[error] (Test / testOnly) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê8:44:45
+sbt:CSC447> scala
+[error] Not a valid command: scala (similar: alias, last, eval)
+[error] Not a valid project ID: scala
+[error] Expected ':'
+[error] Not a valid key: scala (similar: scalaHome, scalaSource, clean)
+[error] scala
+[error]      ^
+sbt:CSC447> console
+Welcome to Scala 3.2.0 (18, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> :quir
+Unknown command: ":quir", run ":help" for a list of commands
+
+scala> :quit
+
+[success] Total time: 59 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê8:55:32
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:172:28
+[error] 172 |      case y :: ys => y max max(ys)
+[error]     |                            ^^^
+[error]     |                            Not found: max
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê8:55:34
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+Welcome to Scala 3.2.0 (18, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> :quit
+
+[success] Total time: 4 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê8:56:44
+sbt:CSC447> testOnly fp1tests
+[info] fp1tests:
+[info] - EX01 - factTest
+[info] - EX02 - fib
+[info] - EX03 - p1
+[info] - EX04 - t1
+[info] - EX05 - swap
+[info] - EX06 - sum
+[info] - EX07 - sumTail
+[info] - EX08 - maxList
+[info] - EX09 - maxTailAux
+[info] - EX10 - otpu *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:116)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       start = 20,
+[info]       end = 10,
+[info]       otpu (start, end) = List(20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10)
+[info]     )
+[info] Run completed in 254 milliseconds.
+[info] Total number of tests run: 10
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 9, failed 1, canceled 0, ignored 0, pending 0
+[info] *** 1 TEST FAILED ***
+[error] Failed tests:
+[error]         fp1tests
+[error] (Test / testOnly) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê8:56:49
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:167:12
+[error] 167 |    else if xs.head max xs.tail.max then xs.head
+[error]     |            ^^^^^^^^^^^^^^^^^^^^^^^
+[error]     |            Found:    Int
+[error]     |            Required: Boolean
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] -- [E008] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:182:27
+[error] 182 |    maxTailAux(accumulator.xs.tail,accumulator)
+[error]     |               ^^^^^^^^^^^^^^
+[error]     |               value xs is not a member of Int
+[error] two errors found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê9:03:41
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E007] Type Mismatch Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:167:12
+[error] 167 |    else if xs.head max xs.tail.max then xs.head
+[error]     |            ^^^^^^^^^^^^^^^^^^^^^^^
+[error]     |            Found:    Int
+[error]     |            Required: Boolean
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê9:04:28
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[info] fp1tests:
+[info] - EX01 - factTest
+[info] - EX02 - fib
+[info] - EX03 - p1
+[info] - EX04 - t1
+[info] - EX05 - swap
+[info] - EX06 - sum
+[info] - EX07 - sumTail
+[info] - EX08 - maxList
+[info] - EX09 - maxTailAux
+[info] - EX10 - otpu *** FAILED ***
+[info]   UnsupportedOperationException was thrown during property evaluation. (fp1tests.scala:116)
+[info]     Message: "None"
+[info]     Occurred at table row 0 (zero based, not counting headings), which had values (
+[info]       start = 20,
+[info]       end = 10,
+[info]       otpu (start, end) = List(20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10)
+[info]     )
+[info] Run completed in 266 milliseconds.
+[info] Total number of tests run: 10
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 9, failed 1, canceled 0, ignored 0, pending 0
+[info] *** 1 TEST FAILED ***
+[error] Failed tests:
+[error]         fp1tests
+[error] (Test / testOnly) sbt.TestsFailedException: Tests unsuccessful
+[error] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê9:04:51
+sbt:CSC447> scala
+[error] Not a valid command: scala (similar: alias, last, eval)
+[error] Not a valid project ID: scala
+[error] Expected ':'
+[error] Not a valid key: scala (similar: scalaHome, scalaSource, clean)
+[error] scala
+[error]      ^
+sbt:CSC447> console
+Welcome to Scala 3.2.0 (18, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> Val lst: List[Int] = List[1,2,3]
+-- [E018] Syntax Error: --------------------------------------------------------
+1 |Val lst: List[Int] = List[1,2,3]
+  |       ^
+  |       expression expected but : found
+  |
+  | longer explanation available when compiling with `-explain`
+-- Error: ----------------------------------------------------------------------
+1 |Val lst: List[Int] = List[1,2,3]
+  |                   ^
+  |                   end of statement expected but '=' found
+
+scala> val list1= List(1,2,3,4,5)
+val list1: List[Int] = List(1, 2, 3, 4, 5)
+
+scala> list1[0]
+-- Error: ----------------------------------------------------------------------
+1 |list1[0]
+  |^^^^^^^^
+  |method apply in trait LinearSeqOps does not take type parameters
+1 error found
+
+scala> list1[1]
+-- Error: ----------------------------------------------------------------------
+1 |list1[1]
+  |^^^^^^^^
+  |method apply in trait LinearSeqOps does not take type parameters
+1 error found
+
+scala> list1.lift(1)
+val res0: Option[Int] = Some(2)
+
+scala> list1.lift(2)
+val res1: Option[Int] = Some(3)
+
+scala> list1.lift(1) max list1.lift(3)
+-- [E007] Type Mismatch Error: -------------------------------------------------
+1 |list1.lift(1) max list1.lift(3)
+  |                  ^^^^^^^^^^^^^
+  |                  Found:    Option[Int]
+  |                  Required: Ordering[Int]
+  |
+  | longer explanation available when compiling with `-explain`
+1 error found
+
+scala> list1(1) max list1(3)
+val res2: Int = 4
+
+scala> :quit
+
+[success] Total time: 951 s (15:51), completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê9:23:26
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[error] -- [E006] Not Found Error: C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\src\main\scala\fp1.scala:202:23
+[error] 202 |    else start :: otpu(star-1,end)
+[error]     |                       ^^^^
+[error]     |                       Not found: star
+[error]     |
+[error]     | longer explanation available when compiling with `-explain`
+[error] one error found
+[error] (Compile / compileIncremental) Compilation failed
+[error] Total time: 0 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê9:23:28
+sbt:CSC447> console
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+Welcome to Scala 3.2.0 (18, Java Java HotSpot(TM) 64-Bit Server VM).
+Type in expressions for evaluation. Or try :help.
+
+scala> :quit
+
+[success] Total time: 5 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê9:23:47
+sbt:CSC447> testOnly fp1tests
+[info] fp1tests:
+[info] - EX01 - factTest
+[info] - EX02 - fib
+[info] - EX03 - p1
+[info] - EX04 - t1
+[info] - EX05 - swap
+[info] - EX06 - sum
+[info] - EX07 - sumTail
+[info] - EX08 - maxList
+[info] - EX09 - maxTailAux
+[info] - EX10 - otpu
+[info] Run completed in 295 milliseconds.
+[info] Total number of tests run: 10
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 10, failed 0, canceled 0, ignored 0, pending 0
+[info] All tests passed.
+[success] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê9:23:50
+sbt:CSC447> testOnly fp1tests
+[info] compiling 1 Scala source to C:\Users\preei\Documents\MSCS\CSC447\hw (1)\hw\target\scala-3.2.0\classes ...
+[info] fp1tests:
+[info] - EX01 - factTest
+[info] - EX02 - fib
+[info] - EX03 - p1
+[info] - EX04 - t1
+[info] - EX05 - swap
+[info] - EX06 - sum
+[info] - EX07 - sumTail
+[info] - EX08 - maxList
+[info] - EX09 - maxTailAux
+[info] - EX10 - otpu
+[info] Run completed in 204 milliseconds.
+[info] Total number of tests run: 10
+[info] Suites: completed 1, aborted 0
+[info] Tests: succeeded 10, failed 0, canceled 0, ignored 0, pending 0
+[info] All tests passed.
+[success] Total time: 1 s, completed 2023σ╣┤1µ£ê15µùÑ Σ╕ïσìê9:34:40
